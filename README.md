@@ -1,21 +1,36 @@
-# HW1
+# Project: University of Washington, DATA 515 Spring 2020, Homework 1
+# Title: Seattle Fremont Bridge Bicycle Counts
+### Author: Bianca Zlavog
+### Goal: Download hourly counts of bicycle crossings on the Fremont Bridge, process data, and produce a visualization for analysis
+### License: This work is available under an MIT license, included in the repository
+### Course website: http://uwseds.github.io/syllabus.html
 
-Obtain the CSV (comma separated variable) file containing the counts of bicycles crossing the Fremont Bridge since 2012 (as described in https://data.seattle.gov/Transportation/Fremont-Bridge-Hourly-Bicycle-Counts-by-Month-Octo/65db-xm6k). Create a project directory with subdirectories for data and analysis, and create a README file. Download the data from https://data.seattle.gov/api/views/65db-xm6k/rows.csv?accessType=DOWNLOAD and put it in the data directory. Create a Jupyter notebook to analyze these data. In the notebook, complete the following:
 
-1. Read the CSV file into a pandas dataframe. (1 pt)
-1. Add columns to the dataframe containing: ( 3 pt)
-   1. The total (East + West) bicycle count
-   1. The hour of the day
-   1. The year
-1. Create a dataframe with the subset of data from the year 2016 (1 pt)
-1. Use pandas + matplotlib to plot the counts by hour. (i.e. hour of the day on the x-axis, total daily counts on the y-axis) (1 pt)
-1. Use pandas to determine what is (on average) the busiest hour of the day (1 pt)
+## Inputs:
 
-Note that we fully expect this analysis to cover some unfamiliar ground, and require teaching yourself a bit about Python and/or the Pandas package. Part of the intent of this assignment is to give you practice seeking help via the web, which (in our experience) is an essential part of using any data science tool. For example, if you type a question about Pandas into Google, you’ll often find an existing answer to your question or something similar on the website StackOverflow.
+Data was gathered from the [City of Seattle Fremont Bridge Bicycle Counter](https://data.seattle.gov/Transportation/Fremont-Bridge-Hourly-Bicycle-Counts-by-Month-Octo/65db-xm6k). This contains the daily and hourly counts for bicycles crossing the bridge since the counter began operation in October 2012, through the most recent month. The counts are also split between which sidewalk the bicycles traverse, either the East or West sidewalk. The fields included in this data are:
 
-A couple other online resources that might be helpful as you work through this:
-The Python Data Science Handbook (free online) has a chapter devoted to Pandas
-Jake’s Jupyter Workflow Video Series shows some examples of working with this particular dataset in a Jupyter notebook.
-Hints
-The “date” field is a string coded as “yyyy-mm-dd-Thh” where “yyyy” is the year, “mm” is the month, “dd” is the day, and “hh” is the hour. (You’ll need to write python code to decode the strings.)
+-`Date`: date of the observation, in the format `MM/DD/YYYY HH:00:00 AM/PM`
+
+-`Fremont Bridge Total`: total number of bikes that crossed the bridge
+
+-`Fremont Bridge East Sidewalk`: number of bikes that crossed the bridge on the east sidewalk
+
+-`Fremont Bridge West Sidewalk`: number of bikes that crossed the bridge on the west sidewalk
+
+Date data was accessed: 04/11/2020
+
+
+## Data processing:
+
+1. In the first step, we download the raw data and save out a file to the repository.
+2. In the second step, we process the data in a Pandas dataframe to prepare it for analysis. We add several new columns and subset the data to only one year.
+3. In the last step, we produce a figure for analysis. We draw some conclusions about the trends in number of bicycles traversing the bridge by hour.
+
+
+## Software used:
+
+* MacOS Catalina 10.15.4
+* Python 3.6.8
+* ipython 7.13.0
 
